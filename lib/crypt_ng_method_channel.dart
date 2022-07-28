@@ -10,8 +10,8 @@ class MethodChannelCryptNg extends CryptNgPlatform {
   final methodChannel = const MethodChannel('crypt_ng');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<String?> generateRandomKey() async {
+    final key = await methodChannel.invokeMethod<String>('generate_random_key');
+    return key;
   }
 }
