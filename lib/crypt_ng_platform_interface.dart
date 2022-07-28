@@ -32,4 +32,10 @@ abstract class CryptNgPlatform extends PlatformInterface {
   Future<String?> generateKeyFromPassword(String password, String salt) {
     throw UnimplementedError('generateKeyFromPassword() has not been implemented.');
   }
+  Future<String?> encrypt(String? data, String? key){
+    throw UnimplementedError('encrypt() has not been implemented.');
+  }
+  Future<String?> decrypt(String? data, String? key){
+    throw UnimplementedError('decrypt() has not been implemented.');
+  }
 }

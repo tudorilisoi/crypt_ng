@@ -39,10 +39,10 @@ class CryptNgPlugin: FlutterPlugin, MethodCallHandler {
         }
       }
       "encrypt" -> {
-        val string = call.argument<String>("string")
+        val data = call.argument<String>("data")
         val keyString = call.argument<String>("key")
 
-        val encrypted = encrypt(string, keys(keyString))
+        val encrypted = encrypt(data, keys(keyString))
 
         result.success(encrypted.toString())
       }

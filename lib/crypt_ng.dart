@@ -11,4 +11,10 @@ class CryptNg {
   Future<String?> generateKeyFromPassword(String password, String salt) {
     return CryptNgPlatform.instance.generateKeyFromPassword(password, salt);
   }
+  Future<String?> encrypt(String data, String key) {
+    return CryptNgPlatform.instance.encrypt(data, key);
+  }
+  Future<String?> decrypt(String data, String key) {
+    return CryptNgPlatform.instance.decrypt(data, key);
+  }
 }
