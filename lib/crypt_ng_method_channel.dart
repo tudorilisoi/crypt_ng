@@ -19,4 +19,12 @@ class MethodChannelCryptNg extends CryptNgPlatform {
     final salt = await methodChannel.invokeMethod<String>('generate_salt');
     return salt;
   }
+  @override
+  Future<String?> generateKeyFromPassword(String password, String salt) async {
+    final key = await methodChannel.invokeMethod("generate_key_from_password", <String, String>{
+      "password": password,
+      "salt": salt,
+    });
+    return key;
+  }
 }

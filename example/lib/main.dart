@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       platformVersion =
-          await _cryptNgPlugin.generateSalt() ?? 'Unknown platform version';
+          await _cryptNgPlugin.generateKeyFromPassword('password', 'salt') ?? 'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
