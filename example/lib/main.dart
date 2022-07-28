@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       platformVersion =
-          await _cryptNgPlugin.generateRandomKey() ?? 'Unknown platform version';
+          await _cryptNgPlugin.generateSalt() ?? 'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Random key: $_platformVersion\n'),
+          child: Text('Value: $_platformVersion\n'),
         ),
       ),
     );
